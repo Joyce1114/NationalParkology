@@ -1,0 +1,21 @@
+  /*----reset.css----*/
+html,body {
+      height: 100%;
+}
+    
+body {
+  background: #fdfdfd;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  margin: 0px;
+  min-width: 1226px;
+}
+    
+a {
+   text-decoration: none;
+   color: inherit;
+}
+
+a:hover {
+  color: lightseagreen;
+}
+

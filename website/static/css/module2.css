@@ -1,0 +1,61 @@
+    /*---modules----*/
+    
+    .placeholder-50px {
+      height: 50px;
+    }
+
+    .placeholder-60px {
+      height: 60px;
+    }
+    
+    .basic-container {
+      width: 1226px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .content-container {
+      width: 1150px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+  
+	.filter_container input[type="text"] {
+		background: 10px 6px #fcfcfc;
+		border: 1px solid #d1d1d1;
+		font: bold 12px Arial, Helvetica, Sans-serif;
+		width: 150px;
+		padding: 6px 15px 6px 35px;
+		-webkit-border-radius: 20px;
+		-moz-border-radius: 20px;
+		border-radius: 20px;
+		text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+		-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+		-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+		-webkit-transition: all 0.2s ease 0s;
+		-moz-transition: all 0.2s ease 0s;
+		-o-transition: all 0.2s ease 0s;
+		transition: all 0.2s ease 0s;
+	}
+
+	.park_namecard{
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	.park_namecard .namecard_href {
+		color: darkblue;
+		font-size: 15pt;
+	}
+
+	.park_namecard a:hover {
+		color: blue;
+		text-decoration: underline;
+	}
+	
+	.park_namecard .par_page_url {
+		color: green;
+		text-decoration: underline;
+	}

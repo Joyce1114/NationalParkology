@@ -1,0 +1,79 @@
+{% extends 'layout.html' %} {% block js %} {% endblock %} {% block css %}
+<style type="text/css">
+    body {
+        background-image: url(/static/img/search_background.jpg);
+        background-size: cover;
+    }
+    
+    .search_container {
+        margin: 200px 20px 200px 20px;
+    }
+    
+    .search_container .form {
+        width: 800px;
+    }
+    
+    .search_container input[type="text"] {
+        background: 10px 6px #fcfcfc;
+        border: 1px solid #d1d1d1;
+        font: bold 12px Sans-serif;
+        height: 30px;
+        width: 150px;
+        padding: 6px 15px 6px 35px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 20px;
+        text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+        -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+        -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+        -webkit-transition: all 0.2s ease 0s;
+        -moz-transition: all 0.2s ease 0s;
+        -o-transition: all 0.2s ease 0s;
+        transition: all 0.2s ease 0s;
+    }
+    
+    .search_container .submit_btn {
+        font-size: 16pt;
+    }
+    
+    .search_container input[type="text"]:focus {
+        color: black;
+    }
+    
+    .titles {
+        text-align: center;
+    }
+    .title {
+        font-size: 40pt;
+    }
+
+    .sub_title {
+        font-size: 20pt;
+    }
+</style>
+
+{% endblock %} {% block heading %}
+<div class="titles">
+    <div class="title">
+        National Parkology
+    </div>
+    <div class="sub_title">
+        Start Your Search Now
+    </div>
+</div>
+
+{% endblock %} {% block content %}
+<!-- HTML for SEARCH BAR -->
+
+<div class="search_container">
+    <form method="POST" action="/search_result">
+        <!--action="http://www.google.com">-->
+        <input type="text" class="searchText" name="name" size="21" maxlength="120" value="" placeholder="Park name">
+        <input type="text" class="searchText" name="country" size="21" maxlength="120" value="" placeholder="country">
+        <input type="text" class="searchText" name="activity" size="21" maxlength="120" value="" placeholder="recreational activity">
+        <input type="submit" value="submit" class="submit_btn">
+    </form>
+    <!-- <div class="clearhack"></div>  -->
+</div>
+{% endblock %}

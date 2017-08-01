@@ -1,0 +1,25 @@
+{% extends 'layout.html' %} {% block js %} {% endblock %} 
+{% block css %}
+<style>
+	.history_entry{
+		margin: 20px 0 20px 0;
+	}
+</style>
+{% endblock %}
+{% block heading %}Search History{% endblock %} {% block content %}
+
+
+	<div class="searchhistory_container">
+		<ul>
+			
+		
+		{% for entry in data.keys()%}
+			<li class="history_entry">
+				<a class="historyentry_href" href="{{url_for('history_route', e=entry )}}">{{" ".join(entry.split("%"))}}</a>
+			</li>
+		{% endfor %}
+		</ul>
+	</div>
+
+
+{% endblock %}

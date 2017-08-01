@@ -1,0 +1,76 @@
+{% extends 'layout.html' %} {% block js %} {% endblock %} {% block css %}
+<style>
+	.info_header {
+		font-size: 16pt;
+	}
+	
+	.info_container li {
+		margin-bottom: 10px;
+	}
+	
+	.map {
+		width: 1150px;
+		height: 500px;
+		border: none;
+	}
+</style>
+{% endblock %} {% block heading %}{{parkTuple.NationalPark.name}}{% endblock %}\ {% block content %}
+<div class="park_content_container">
+	<p class="header">It is in {{parkTuple.Country.name}}, where people speak {{myCountry.language}}</p>
+
+	<div class="park_map_container">
+		<iframe class="map" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDZ64MaaCa7xC-8JhqxKVUd2F1Qrqe2EYw&q={{
+			'+'.join(parkTuple.NationalPark.name.split())
+		}}" allowfullscreen></iframe>
+	</div>
+
+	<div class="info_container" id="geology">
+		<p class="info_header">Geology type:</p>
+		<ul>
+			{%for geology in geologyTypes%}
+			<li>{{geology.name}}</li>
+			{% endfor %}
+		</ul>
+	</div>
+
+
+	<div class="info_container" id="climate">
+		<p class="info_header">Climate:</p>
+		<ul>
+			{%for climate in climateTypes%}
+			<li>{{climate.Climate.name}}</li>
+			{%if climate.Climate.description!=None%}
+			<p>{{climate.Climate.description}}</p>
+			{%endif%}
+			{% endfor %}
+			<ul>
+	</div>
+
+{%if myRecreations!=None%}
+	<div class="info_container" id="recreation">
+		<p class="info_header">Recreations:</p>
+		<ul>
+			{%for recreation in myRecreations%}
+			{%if recreation.recreation_name!=None%}
+			<li>
+				{{recreation.recreation_name}}
+			</li>
+			{%endif%}
+			{%if recreation.description!=None%}
+			<p>{{recreation.description}}</p>
+			{%endif%}
+			{%endfor%}
+			<ul>
+	</div>
+	{%endif%}
+
+{%if parkTuple.NationalPark.history!=None%}
+	<div class="info_container" id="history">
+		<p class="info_header">A brief history:</p>
+		<p>{{parkTuple.NationalPark.history}} </p>
+	</div>
+{%endif%}
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends 'layout.html' %} {% block js %} {% endblock %}
+{% block css %}
+<style>
+	.img_container img{
+		height: 200px;
+		width: auto;
+	}
+
+	.park_namecard *{
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	
+	.park_namecard .namecard_href{
+		font-size: 16pt;
+		font-weight: bold;
+	}
+
+</style>
+{% endblock %}
+{% block heading %}Search criteria{% endblock %} {% block content %}
+<div class="filter_container">
+
+	<p>Filter results</p>
+	<form method="POST" action="/search_result/filter_result">
+		<br>
+		<input type="text" class="searchText" name="pricemin" size="21" maxlength="120" value="" placeholder="Price Higher Than">
+		<input type="text" class="searchText" name="pricemax" size="21" maxlength="120" value="" placeholder="Price Lower Than">
+		<br><br>
+
+		<input type="text" list="continents" name="continent" placeholder="Select Continent">
+		<datalist id="continents">
+			<select>
+					<option value="all">
+				{% for continent in myContinents %}
+					<option value="{{ continent.name }}">
+				{% endfor %}
+				</select>
+		</datalist>
+		<br><br>
+
+		<input type="text" list="climates" name="climate" placeholder="Select Climate">
+		<datalist id="climates">
+			<select>
+					<option value="all">
+				{% for climate in myClimates %}
+					<option value="{{ climate.name }}">
+				{% endfor %}
+				</select>
+
+		</datalist>
+		<br><br>
+
+		<input type="text" list="geologies" name="geology" placeholder="Select Geology">
+		<datalist id="geologies">
+			<select>
+					<option value="all">
+				{% for geology in myGeologies %}
+					<option value="{{ geology.name }}">
+				{% endfor %}
+				</select>
+		</datalist>
+		<br><br>
+
+		<input type="submit" value="filter" class="submit_btn">
+	</form>
+
+	<hr/>
+</div>
+
+<div class="result_container">
+	{% for park in data %}
+	<div class="park_namecard">
+		<a class="namecard_href" href="{{url_for('show_park', id=park.pid)}}">{{park.name}}</a>
+		<div class="img_container">
+			<img src="{{park.imgurl}}" alt="Image for {{park.name}}">
+		</div>
+		<div class="text">
+			<div class="history">
+			{{park.history}}
+			</div>
+			<a class="par_page_url" href="{{park.url}}">Official Page</a>
+		</div>
+		<hr>
+	</div>
+	{% endfor %}
+</div>
+
+<p>{{data|length}} park{{data|length|pluralize}} found in the database.</p>
+{% endblock %}

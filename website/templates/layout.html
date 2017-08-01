@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>National Parkology</title>
+  <meta name="description" content="316 Project simple website" />
+  <meta name="keywords" content="Database, natioal-parks" />
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+  <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" media="screen"/>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/module2.css')}}" type="text/css" media="screen"/>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/reset3.css')}}" type="text/css" media="screen"/>
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  {% block css %}{% endblock %} {% block js %}{% endblock %}
+</head>
+
+<body>
+  <div class="site-top">
+    <div class="nav-container basic-container">
+      <ul class="nav-list">
+        <a href="/">
+          <li class="nav-item">Home</li>
+        </a>
+        <a href ="/history">
+          <li class ="nav-item">Search History</li>
+        </a>
+      </ul>
+    </div>
+  </div>
+  <!--<h1><a href="/">National Parkology</a></h1>-->
+
+  <div class="main">
+    <div class="placeholder-60px basic-container"></div>
+    <div class="main-container content-container">
+      <h2 id="heading">{% block heading %}{% endblock %}</h2>
+      {% block content %}{% endblock %}
+    </div>
+    <div class="placeholder-60px basic-container"></div>
+  </div>
+  
+</body>
+
+</html>

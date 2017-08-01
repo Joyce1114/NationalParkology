@@ -1,0 +1,42 @@
+    /*---index css??----*/
+    
+.site-top {
+  position: fixed;
+  width: 100%;
+  min-width: 1226px;
+  height: 50px;
+  z-index: 50;
+  opacity: 0.95;
+  font-size: 16px;
+  background-color: black;
+  opacity: 0.8;
+  color: #9d9d9d;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+    
+.site-top .nav-list {
+  margin: 0;
+}
+    
+.site-top .nav-list .nav-item {
+  display: inline-block;
+  padding: 0 10px 0 10px;
+  margin: 10px 55px 10px 0;
+  border-style: solid;
+  border-width: thin;
+  border-color: #9d9d9d;
+  border-radius: 5px;
+  line-height: 30px;
+  transition: background-color 0.3s;
+  transition: color 0.2s;
+}
+    
+.site-top .nav-list .nav-item:hover {
+  color: #1d1d1d;
+  background-color: #9d9d9d;
+  transition: background-color 0.3s;
+}
+    
+#heading {
+  margin: 0px;
+}
